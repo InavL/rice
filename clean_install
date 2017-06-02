@@ -92,6 +92,20 @@ git clone https://github.com/chrjguill/i3lock-color
 git clone https://github.com/meskarune/i3lock-fancy
 # copy lock and /icons to "/usr/local/bin"
 
-# rice
-polybar-git
-ttf-font-awesome
+# compton
+# paste compton
+
+# dunst
+sudo apt-get install libdbus-1-dev libx11-dev libxrandr-dev libxss-dev libglib2.0-dev libpango1.0-dev libgtk2.0-dev libxdg-basedir-dev
+git clone https://github.com/dunst-project/dunst.git
+cd dunst
+make
+sudo make PREFIX=/usr install
+
+# wal
+# download wal and and rename the "wal-master" to "wal"
+# paste "wal"
+export PATH=$PATH:~/wal
+
+# rice to be done
+polybar

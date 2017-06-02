@@ -1,0 +1,47 @@
+# programs
+chromium-browser # I don't use it but installing it enables h.264 for Vivaldi
+vlc-git # video player of my choice
+thunar # GUI file browser
+ranger # terminal file manager
+htop # it's pretty for screenshots
+cmatrix # ^
+neofetch-git # ^
+redshift # f.lux-ish 
+play-on-linux # gotta get those games *glares at Blizzard*
+# steam
+
+# discord
+# https://discordapp.com/api/download?platform=linux&format=deb
+# install with ark
+
+# vivaldi-stable
+# echo "echo deb http://repo.vivaldi.com/stable/deb/ stable main > /etc/apt/sources.list.d/vivaldi.list" | sudo sh
+# curl http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -
+# sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
+# sudo apt-get install vivaldi-stable
+
+# spotify-client
+# sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+# echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+spotify-client
+
+# rice
+i3-gaps
+polybar-git
+i3lock-blur
+rofi-git
+dmenu
+compton-git
+scrot
+feh
+ttf-font-awesome
+dunst-git
+oh-my-zsh-git # oh my z shell
+zsh-completions
+zsh-syntax-highlighting # syntax highlighting
+
+#desktop
+nvidia-beta
+nvidia-libgl-beta # Obligatory Drivers for nvidia
+lib32-nvidia-utils-beta # beta for 1080
+nvidia-libgl32 # Needed for Steam

@@ -34,6 +34,7 @@ dmenu
 compton-git
 scrot
 feh
+maim
 ttf-font-awesome
 dunst-git
 oh-my-zsh-git # oh my z shell

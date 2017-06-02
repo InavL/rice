@@ -1,4 +1,5 @@
 # rice
+To setup: dunst and polybar
 
 ## Pasting:
 

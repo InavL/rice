@@ -1,5 +1,12 @@
 # rice
 
+Pasting:
+
 .zshrc -> home/
 
-config -> 
+.wallpaper.png -> home/Pictures/
+
+redshift.conf -> home/.conf/
+
+config -> home/.config/i3/
+

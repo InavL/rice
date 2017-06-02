@@ -49,6 +49,12 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install spotify-client
 
+# wallpaper
+# paste .wallpaper.png
+
+# redshift
+# paste redshift.conf
+
 # i3
 sudo apt-get install i3
 

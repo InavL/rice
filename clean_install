@@ -101,6 +101,7 @@ git clone https://github.com/dunst-project/dunst.git
 cd dunst
 make
 sudo make PREFIX=/usr install
+# paste dunstrc
 
 # wal
 # download wal and and rename the "wal-master" to "wal"

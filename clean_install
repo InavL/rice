@@ -7,7 +7,7 @@ sudo apt-get install zsh terminator
 chsh -s $(which zsh)
 # relaunch terminator
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
-# paste .zshrc
+# paste ".zshrc"
 
 # main software
 sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance git
@@ -50,9 +50,16 @@ sudo apt-get update
 sudo apt-get install spotify-client
 
 # i3-gaps
+# dependencies
+libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev
+# i3 gaps (copy line 56-72)
 cd /path/where/you/want/the/repository
+
+# clone the repository
 git clone https://www.github.com/Airblader/i3 i3-gaps
 cd i3-gaps
+
+# compile & install
 autoreconf --force --install
 rm -rf build/
 mkdir -p build && cd build/
@@ -62,9 +69,19 @@ mkdir -p build && cd build/
 ../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
 make
 sudo make install
+# end
+# go to systemsettings -> SDDM and in the advanced tab change session to i3 (from plasma)
+# reboot or log-out, log in
+# paste "config" after setup
+# reboot or log-out, log in
+
+# i3lock-color and i3lock-fancy
+sudo apt-get install pkg-config libxcb1 libpam-dev libcairo-dev libxcb-composite0 libxcb-composite0-dev libxcb-xinerama0-dev libev-dev libx11-dev libx11-xcb-dev libxkbcommon0 libxkbcommon-x11-0 libxcb-dpms0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xkb-dev libxkbcommon-x11-dev libxkbcommon-dev
+sudo apt-get install imagemagick bash awk utils-linux
+git clone https://github.com/chrjguill/i3lock-color
+git clone https://github.com/meskarune/i3lock-fancy
+# copy lock and /icons to "/usr/local/bin"
 
 # rice
-i3-gaps
 polybar-git
-i3lock-blur
 ttf-font-awesome

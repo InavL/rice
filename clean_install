@@ -2,7 +2,14 @@
 sudo apt-get upgrade --fix-missing
 sudo apt-get update
 
-# Through terminal 
+# terminator, zsh and oh-my-zsh setup
+sudo apt-get install zsh terminator
+chsh -s $(which zsh)
+# relaunch terminator
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+# paste .zshrc
+
+# main software
 sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance git
 # includes the following:
 # chromium-browser
@@ -42,11 +49,22 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update
 sudo apt-get install spotify-client
 
+# i3-gaps
+cd /path/where/you/want/the/repository
+git clone https://www.github.com/Airblader/i3 i3-gaps
+cd i3-gaps
+autoreconf --force --install
+rm -rf build/
+mkdir -p build && cd build/
+
+# Disabling sanitizers is important for release versions!
+# The prefix and sysconfdir are, obviously, dependent on the distribution.
+../configure --prefix=/usr --sysconfdir=/etc --disable-sanitizers
+make
+sudo make install
+
 # rice
 i3-gaps
 polybar-git
 i3lock-blur
 ttf-font-awesome
-oh-my-zsh-git # oh my z shell
-zsh-completions
-zsh-syntax-highlighting # syntax highlighting

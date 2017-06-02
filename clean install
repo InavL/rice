@@ -25,7 +25,7 @@ sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch re
 
 # discord
 # https://discordapp.com/api/download?platform=linux&format=deb
-# install with ark
+# install with the package handler
 
 # vivaldi-stable
 echo "echo deb http://repo.vivaldi.com/stable/deb/ stable main > /etc/apt/sources.list.d/vivaldi.list" | sudo sh

@@ -3,7 +3,7 @@ sudo apt-get upgrade --fix-missing
 sudo apt-get update
 
 # Through terminal 
-sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance
+sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance git
 # includes the following:
 # chromium-browser
 # vlc
@@ -23,6 +23,7 @@ sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch re
 # maim
 # dunst
 # lxappearance
+# git
 
 # discord
 # https://discordapp.com/api/download?platform=linux&format=deb

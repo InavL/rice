@@ -10,7 +10,7 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 # paste ".zshrc"
 
 # main software
-sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance git
+sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch redshift play-on-linux steam rofi dmenu compton scrot feh maim dunst lxappearance git slop
 # includes the following:
 # chromium-browser
 # vlc
@@ -31,6 +31,7 @@ sudo apt-get install chromium-browser vlc thunar ranger htop cmatrix neofetch re
 # dunst
 # lxappearance
 # git
+# slop
 
 # discord
 # https://discordapp.com/api/download?platform=linux&format=deb

@@ -1,1 +1,4 @@
 # rice
+
+.zshrc -> home/
+config -> 

@@ -9,6 +9,10 @@
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="bira"
 
+export PATH=$PATH:~/wal
+
+(wal -r &)
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

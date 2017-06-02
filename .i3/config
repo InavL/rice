@@ -171,9 +171,7 @@ exec_always --no-startup-id feh --bg-scale /home/inavl/Pictures/.wallpaper.png
 smart_borders on
 bindsym $mod+shift+x exec lock
 bindsym Print exec maim -s --hidecursor
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "50" -bc "#2f343f" -bg "$#2f343f" -fg "#f3f4f5" -hlbg "#2f343f" -hlfg "#9575cd"
-exec compton -f -e 0.5 --refresh-rate 144
-
+bindsym $mod+d exec rofi -show run
 
 # colors
 set $bg-color 	         #2f343f
@@ -202,15 +200,18 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # custom started programs
-exec vivaldi
-exec steam
+# exec vivaldi
+# exec steam
 exec discord
 exec spotify
 for_window [class="Spotify"] move window to workspace $workspace0
 
 # making 144Hz work
 exec_always xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00
+exec compton -f -e 0.25 --refresh-rate 144
 
+# redshift (uses config)
+exec redshift
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)

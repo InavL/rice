@@ -57,6 +57,9 @@ sudo apt-get install spotify-client
 # redshift
 # paste redshift.conf
 
+# playerctl
+# download from here https://github.com/acrisci/playerctl/releases and install the .deb
+
 # i3
 sudo apt-get install i3
 

@@ -1,17 +1,23 @@
 # rice
-Left to setup: dunst and polybar
 
 ![rice screen](http://dotshare.it/public/images/uploads/1485.png)
+> Left to setup: dunst and polybar
 
 ## Pasting:
 
-.zshrc -> home/
+.zshrc          ->  home/
 
-.wallpaper.png -> home/Pictures/
+wal             ->  home/
 
-redshift.conf -> home/.conf/
+dunstrc         ->  home/dunst/
 
-config -> home/.config/i3/
+.wallpaper.png  ->  home/Pictures/
+
+redshift.conf   ->  home/.config/
+
+config          ->  home/.config/i3/
+
+compton.conf    ->  home/.config/
 
 ## Fonts: 
 

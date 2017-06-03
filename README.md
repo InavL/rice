@@ -1,6 +1,7 @@
 # rice
 
 ![rice screen](http://dotshare.it/public/images/uploads/1486.png)
+![rofi](http://dotshare.it/public/images/uploads/1487.png)
 > Left to setup: dunst and polybar
 
 ## Pasting:

@@ -102,7 +102,7 @@ bindsym $mod+Return exec terminator
 bindsym $mod+q kill
 
 # start rofi
-bindsym $mod+d exec rofi -bw 0 -show run -lines 7 -width -35 -eh 2 -hide-scrollbar -location 2 -separator-style solid -padding 4 -font "Overpass 12"
+bindsym $mod+d exec rofi -bw 0 -show run -lines 7 -width -35 -eh 2 -hide-scrollbar -location 7 -separator-style solid -padding 4 -font "Overpass 12"
 
 # Toggle sticky windows
 bindsym $mod+e sticky toggle
@@ -134,9 +134,9 @@ mode "resize" {
         bindsym odiaeresis resize grow width 10 px or 10 ppt
 
         bindsym shift+j resize shrink width 3 px or 3 ppt
-        bindsym shift+k resize shrink width 3 px or 3 ppt
-        bindsym shift+l resize shrink width 3 px or 3 ppt
-        bindsym shift+odiaresis resize shrink width 3 px or 3 ppt
+        bindsym shift+k resize grow height 3 px or 3 ppt
+        bindsym shift+l resize shrink height 3 px or 3 ppt
+        bindsym shift+odiaeresis resize grow width 3 px or 3 ppt
         
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -157,7 +157,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Cycle wallpapers
-bindsym $mod+w exec "wal -i ${HOME}/Pictures/Wallpapers -o wal-set"
+bindsym $mod+w exec "wal -i ${HOME}/Pictures/Wallpapers -o wal-set -t"
 
 
 
@@ -170,11 +170,11 @@ bindsym $mod+w exec "wal -i ${HOME}/Pictures/Wallpapers -o wal-set"
 for_window [class="^.*"] border normal 0
 for_window [class="Spotify"] move window to workspace $workspace9
 
-
 # Float all windows by default
-for_window [clas="^.*"] floating enable
-for_window [clas="Firefox"] floating disable
-for_window [clas="Spotify"] floating disable
+for_window [class="^.*"] floating enable
+for_window [class="Spotify"] floating disable
+for_window [class="Kate"] floating enable
+for_window [class="Firefox"] floating disable
 # for_window [class="VirtualBox"] floating enable
 # for_window [class="Hearthstone"] floating enable
 # for_window [class="Battle.net.exe"] floating enable
@@ -193,7 +193,7 @@ assign [class="Spotify"]    $workspace9
 
 
 exec "wal -i $(< ${HOME}/.cache/wal/wal) -o wal-set"
-exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/firefox'
+exec --no-startup-id i3-msg '$workspace2; exec /usr/bin/firefox'
 # exec vivaldi
 # exec steam
 exec discord
@@ -206,12 +206,14 @@ exec spotify
 # MACHINE EXCLUSIVE {{{
 
 # Title bars with padding
-font pango:Overpass Semibold 15
-for_window [class=".*"] title_format "<span font='Overpass Semibold 10'> くコ:彡</span>"
+font pango:Overpass Semibold 10
+for_window [class=".*"] title_format "<span font='Overpass Semibold 9'>  </span>"
 
 # making 144Hz work
 exec_always xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00
-exec --no-startup-id compton --config ~/.config/compton.conf -b --refresh-rate 144
+exec --no-startup-id compton --config ~/.config/compton.conf
+# exec --no-startup-id compton --config ~/.config/compton.conf -b --refresh-rate 144
+
 
 # Workspaces
 set $workspace1 "1. "
@@ -237,10 +239,10 @@ set $workspace0 "10. "
 # $workspace9 output DVI-0
 # $workspace0 output DVI-0
 
-# smart_gaps on
+smart_gaps on
 smart_borders on
-gaps inner 25
-gaps outer 40
+gaps inner 10
+gaps outer 20
 
 # bindsym $mod+x grow gaps inner 5
 # bindsym $mod+c shrink gaps inner 5
@@ -266,13 +268,16 @@ gaps outer 40
 bar {
         status_command i3status 
         colors {
-            background #2f343f
-            separator #757575
+            background $bg
+            separator $f0f0f0
+            statusline $FFFFFF
             #                  border             background         text
-            focused_workspace  #2f343f            #2f343f            #f3f4f5
-            inactive_workspace #2f343f            #2f343f            #676E7D
-            urgent_workspace   #E53935            #E53935            #f3f4f5
+            focused_workspace  $f0f0f0            $bg                #FFFFFF
+            inactive_workspace $bg                $bg                #FFFFFF
+            urgent_workspace   $bg2               $bg2               #FFFFFF
         }
+        position top
+        
 }
 
 

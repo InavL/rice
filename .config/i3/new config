@@ -199,7 +199,7 @@ exec spotify
 
 # Title bars with padding
 font pango:Overpass Semibold 15
-for_window [class=".*"] title_format "<span font='Overpass Semibold 10'> xxx:x</span>"
+for_window [class=".*"] title_format "<span font='Overpass Semibold 10'> くコ:彡</span>"
 
 # making 144Hz work
 exec_always xrandr --output DVI-I-1 --mode 1920x1080 --rate 144.00

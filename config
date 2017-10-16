@@ -1,0 +1,270 @@
+# InavL's config file
+
+set $mod Mod4
+floating_modifier $mod
+
+
+
+# Fonts
+font xft:Noto Sans 10
+
+
+
+# Border style
+new_window pixel 1
+new_float normal
+hide_edge_borders none
+for_window [class="^.*"] border pixel 0
+gaps inner 15
+gaps outer 15
+
+
+
+# Wal resources
+set_from_resources	$fg	i3wm.color7	#f0f0f0
+set_from_resources	$bg	i3wm.color2	#f0f0f0
+
+
+
+# Class			border	backgr	text	indicat	child_border
+client.focused		$bg	$bg	$fg	$bg	$bg
+client.focused_inactive	$bg	$bg	$fg	$bg	$bg
+client.unfocused	$bg	$bg	$fg	$bg	$bg
+client.urgent		$bg	$bg	$fg	$bg	$bg
+client.placeholder	$bg	$bg	$fg	$bg	$bg
+
+client.background	$bg
+
+
+
+# Start a terminal
+set $term terminator
+bindsym $mod+Return exec terminator
+
+
+
+# Starting external scripts
+# Composite manager
+exec --no-startup-id compton --config ~/.config/compton.conf
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id "wal -i $(< ${HOME}/.cache/wal/wal) -o wal-set -t"
+
+
+
+# Bindings
+bindsym $mod+Shift+space	floating toggle
+bindsym $mod+space		focus mode_toggle
+
+bindsym $mod+Shift+Escape	exec i3-msg exit
+
+bindsym $mod+q			kill
+#bindsym $mod+Shift+q		
+
+bindsym $mod+w			exec --no-startup-id "wal -i ${HOME}/Pictures/Wallpapers -o wal-set -t"
+#bindsym $mod+Shift+w
+
+bindsym $mod+e			sticky toggle
+#bindsym $mod+Shift+e
+
+bindsym $mod+r			exec $term -e ranger
+bindsym $mod+Shift+r		restart
+
+bindsym $mod+t			split toggle
+bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
+
+#bindsym $mod+y
+bindsym $mod+Shift+y		resize shrink width 10 px or 10 ppt
+
+#bindsym $mod+u
+bindsym $mod+Shift+u		resize shrink height 10 px or 10 ppt
+
+bindsym $mod+i			exec $term -e htop
+bindsym $mod+Shift+i		resize grow height 10 px or 10 ppt
+
+#bindsym $mod+o
+bindsym $mod+Shift+o		resize grow width 10 px or 10 ppt
+
+#bindsym $mod+p
+#bindsym $mod+Shift+p
+
+bindsym $mod+s			gaps inner current plus 5
+bindsym $mod+Shift+s		gaps inner current minus 5
+
+bindsym $mod+d			exec rofi -show run -hide-scrollbar
+bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
+
+bindsym $mod+f			fullscreen toggle
+#bindsym $mod+Shift+f		
+
+#bindsym $mod+g
+#bindsym $mod+Shift+g
+
+bindsym $mod+Shift+h		move left 30
+
+bindsym $mod+Shift+j		move down 30
+
+bindsym $mod+Shift+k		move up 30
+
+bindsym $mod+Shift+l		move right 30
+
+bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+Shift+z		gaps outer current minus 5
+
+bindsym $mod+x			exec --no-startup-id blurlock
+bindsym $mod+Shift+x		exec sudo shutdown -h now
+
+#bindsym $mod+c
+#bindsym $mod+Shift+c
+
+bindsym $mod+v			split vertical ; exec notify-send 'Tile vertically'
+bindsym $mod+Shift+v		split horizontal ; exec notify-send 'Tile horizontally'
+
+#bindsym $mod+b
+#bindsym $mod+Shift+b
+
+#bindsym $mod+n
+#bindsym $mod+Shift+n
+
+bindsym $mod+m			bar mode toggle
+#bindsym $mod+Shift+m
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Naming workspaces
+set $ws1 "1."
+set $ws2 "2."
+set $ws3 "3."
+set $ws4 "4."
+set $ws5 "5."
+set $ws6 "6."
+set $ws7 "7."
+set $ws8 "8."
+set $ws9 "9."
+set $ws10 "10."
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Print screen takes a screenshot of the chosen area.
+bindsym Print		exec --no-startup-id maim -s --hidecursor
+
+
+
+# Window rules
+for_window [class="Firefox"] move to workspace $ws2
+for_window [title="GIMP Startup"] move to workspace $ws5
+for_window [class="Gimp"] move to workspace $ws5
+for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50px or 50 ppt
+for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30 ppt
+for_window [class="Blender"] move to workspace $ws6
+#for_window [class="marble"] move to workspace $ws7
+#for_window [class="Thunderbird"] move to workspace $ws9
+
+workspace $ws5 gaps inner 0
+workspace $ws5 gaps outer 0
+workspace $ws6 gaps inner 0
+workspace $ws6 gaps outer 0
+
+
+
+# Manjaro i3 settings
+
+
+### Sound-section
+exec --no-startup-id volumeicon
+bindsym $mod+Ctrl+m exec $term -e 'alsamixer'
+#exec --no-startup-id pulseaudio
+#exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
+
+# Start Applications
+bindsym $mod+Ctrl+b exec $term -e 'bmenu'
+bindsym $mod+F2 exec palemoon
+bindsym $mod+F3 exec pcmanfm
+bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+F5 exec $term -e 'mocp'
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'Restart dunst'"
+bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Open specific applications in floating mode
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Calamares"] floating enable border normal
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer"] floating enable
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="GParted"] floating enable border normal
+for_window [title="i3_help"] floating enable sticky enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable
+for_window [class="Lxappearence"] floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] floating enable
+for_window [class="Manjaro Settings Manager"] floating enable border normal
+for_window [title="MuseScore: Play Panel"] floating enable
+for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [title="Oblogout"] fullscreen enable
+for_window [title="octopi"] floating enable
+for_window [title="About Pale Moon"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qt5ct"] floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
+for_window [class="Simple-scan"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="Thus"] floating enable border normal
+for_window [class="Timeset-gui"] floating enable border normal
+for_window [class="Xfburn"] floating enable
+
+# Autostart
+#exec --nostartup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+#exec --no-startup-id manjaro-hello
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id pamac-tray
+#exec --no-startup-id clipit
+exec --no-startup-id blueman
+exec_always --no-startup-id sbxkb
+#exec --no-startup-id start_conky_maia
+#exec --no-startup-id start_conky_green
+exec --no-startup-id xautolock -time 10 -locker blurlock
+exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id fix_cursor
+
